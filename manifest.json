@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "SAP Note Input Box",
+    "version": "1.0",
+    "description": "Show textbox on Ctrl+Shift+Q to input SAP Note.",
+    "permissions": ["scripting"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "commands": {
+      "show_input_box": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+Q"
+        },
+        "description": "Show SAP Note input box"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "all_frames": true
+      }
+    ]
+  }
+  
